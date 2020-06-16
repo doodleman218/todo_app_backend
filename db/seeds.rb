@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Location.destroy_all
+Quest.destroy_all
+
+Location.create(name: "Hyrule Castle")
+Location.create(name: "Zoras Domain")
+
+Quest.create(content: "Get around to saving Zelda", location_id: Location.find_by(name: "Hyrule Castle").id )
+Quest.create(content: "Hang out with Sidon", location_id: Location.find_by(name: "Zoras Domain").id )
