@@ -11,6 +11,8 @@ Quest.destroy_all
 
 Location.create(name: "Hyrule Castle")
 Location.create(name: "Zoras Domain")
+Location.create(name: "Gerudo Desert")
 
 Quest.create(content: "Get around to saving Zelda", location_id: Location.find_by(name: "Hyrule Castle").id )
 Quest.create(content: "Hang out with Sidon", location_id: Location.find_by(name: "Zoras Domain").id )
+Quest.create(content: "Cross dress", location_id: Location.find_by(name: "Gerudo Desert").id )
