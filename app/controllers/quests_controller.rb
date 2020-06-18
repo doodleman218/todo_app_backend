@@ -26,6 +26,17 @@ class QuestsController < ApplicationController
     quest.destroy
   end
 
+  def edit
+    quest = Quest.find(quest_params[:id])
+  end
+
+  def update
+    # byebug
+    quest = Quest.find(quest_params[:id])
+       quest.update(content:quest_params[:content], location_id: Location.find_by(name: quest_params[:location_name]).id)
+       render json: quest
+  end
+
   private
 
   def quest_params
